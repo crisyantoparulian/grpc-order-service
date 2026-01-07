@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package order.v1;
 
-option go_package = "github.com/<your-username>/order-service/gen/go/order/v1";
+option go_package = "github.com/crisyantoparulian/grpc-order-service/gen/go/proto/order/v1";
 
 service OrderService {
   rpc GetOrder(GetOrderRequest) returns (GetOrderResponse);

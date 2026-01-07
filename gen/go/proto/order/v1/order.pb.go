@@ -128,7 +128,7 @@ const file_proto_order_v1_order_proto_rawDesc = "" +
 	"\border_id\x18\x01 \x01(\tR\aorderId\x12\x16\n" +
 	"\x06status\x18\x02 \x01(\tR\x06status2Q\n" +
 	"\fOrderService\x12A\n" +
-	"\bGetOrder\x12\x19.order.v1.GetOrderRequest\x1a\x1a.order.v1.GetOrderResponseB:Z8github.com/<your-username>/order-service/gen/go/order/v1b\x06proto3"
+	"\bGetOrder\x12\x19.order.v1.GetOrderRequest\x1a\x1a.order.v1.GetOrderResponseBGZEgithub.com/crisyantoparulian/grpc-order-service/gen/go/proto/order/v1b\x06proto3"
 
 var (
 	file_proto_order_v1_order_proto_rawDescOnce sync.Once
