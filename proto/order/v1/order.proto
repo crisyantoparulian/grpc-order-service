@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package order.v1;
+
+option go_package = "github.com/<your-username>/order-service/gen/go/order/v1";
+
+service OrderService {
+  rpc GetOrder(GetOrderRequest) returns (GetOrderResponse);
+}
+
+message GetOrderRequest {
+  string order_id = 1;
+}
+
+message GetOrderResponse {
+  string order_id = 1;
+  string status = 2;
+}
