@@ -69,6 +69,7 @@ type GetOrderResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	OrderId       string                 `protobuf:"bytes,1,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
 	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	TotalPrice    int64                  `protobuf:"varint,3,opt,name=total_price,json=totalPrice,proto3" json:"total_price,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -117,16 +118,25 @@ func (x *GetOrderResponse) GetStatus() string {
 	return ""
 }
 
+func (x *GetOrderResponse) GetTotalPrice() int64 {
+	if x != nil {
+		return x.TotalPrice
+	}
+	return 0
+}
+
 var File_proto_order_v1_order_proto protoreflect.FileDescriptor
 
 const file_proto_order_v1_order_proto_rawDesc = "" +
 	"\n" +
 	"\x1aproto/order/v1/order.proto\x12\border.v1\",\n" +
 	"\x0fGetOrderRequest\x12\x19\n" +
-	"\border_id\x18\x01 \x01(\tR\aorderId\"E\n" +
+	"\border_id\x18\x01 \x01(\tR\aorderId\"f\n" +
 	"\x10GetOrderResponse\x12\x19\n" +
 	"\border_id\x18\x01 \x01(\tR\aorderId\x12\x16\n" +
-	"\x06status\x18\x02 \x01(\tR\x06status2Q\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\x12\x1f\n" +
+	"\vtotal_price\x18\x03 \x01(\x03R\n" +
+	"totalPrice2Q\n" +
 	"\fOrderService\x12A\n" +
 	"\bGetOrder\x12\x19.order.v1.GetOrderRequest\x1a\x1a.order.v1.GetOrderResponseBGZEgithub.com/crisyantoparulian/grpc-order-service/gen/go/proto/order/v1b\x06proto3"
 

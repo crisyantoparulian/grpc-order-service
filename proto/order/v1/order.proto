@@ -15,4 +15,5 @@ message GetOrderRequest {
 message GetOrderResponse {
   string order_id = 1;
   string status = 2;
+  int64 total_price = 3;
 }
