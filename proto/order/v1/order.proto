@@ -6,6 +6,7 @@ option go_package = "github.com/crisyantoparulian/grpc-order-service/gen/go/prot
 
 service OrderService {
   rpc GetOrder(GetOrderRequest) returns (GetOrderResponse);
+  rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse);
 }
 
 message GetOrderRequest {
@@ -16,4 +17,14 @@ message GetOrderResponse {
   string order_id = 1;
   string status = 2;
   int64 total_price = 3;
+}
+
+message CreateOrderRequest {
+  string product_id = 1;
+  int32 quantity = 2;
+}
+
+message CreateOrderResponse {
+  string order_id = 1;
+  string status = 2;
 }

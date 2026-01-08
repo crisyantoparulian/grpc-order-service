@@ -125,6 +125,110 @@ func (x *GetOrderResponse) GetTotalPrice() int64 {
 	return 0
 }
 
+type CreateOrderRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ProductId     string                 `protobuf:"bytes,1,opt,name=product_id,json=productId,proto3" json:"product_id,omitempty"`
+	Quantity      int32                  `protobuf:"varint,2,opt,name=quantity,proto3" json:"quantity,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateOrderRequest) Reset() {
+	*x = CreateOrderRequest{}
+	mi := &file_proto_order_v1_order_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateOrderRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateOrderRequest) ProtoMessage() {}
+
+func (x *CreateOrderRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_order_v1_order_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateOrderRequest.ProtoReflect.Descriptor instead.
+func (*CreateOrderRequest) Descriptor() ([]byte, []int) {
+	return file_proto_order_v1_order_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *CreateOrderRequest) GetProductId() string {
+	if x != nil {
+		return x.ProductId
+	}
+	return ""
+}
+
+func (x *CreateOrderRequest) GetQuantity() int32 {
+	if x != nil {
+		return x.Quantity
+	}
+	return 0
+}
+
+type CreateOrderResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	OrderId       string                 `protobuf:"bytes,1,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
+	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateOrderResponse) Reset() {
+	*x = CreateOrderResponse{}
+	mi := &file_proto_order_v1_order_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateOrderResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateOrderResponse) ProtoMessage() {}
+
+func (x *CreateOrderResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_order_v1_order_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateOrderResponse.ProtoReflect.Descriptor instead.
+func (*CreateOrderResponse) Descriptor() ([]byte, []int) {
+	return file_proto_order_v1_order_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *CreateOrderResponse) GetOrderId() string {
+	if x != nil {
+		return x.OrderId
+	}
+	return ""
+}
+
+func (x *CreateOrderResponse) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
 var File_proto_order_v1_order_proto protoreflect.FileDescriptor
 
 const file_proto_order_v1_order_proto_rawDesc = "" +
@@ -136,9 +240,17 @@ const file_proto_order_v1_order_proto_rawDesc = "" +
 	"\border_id\x18\x01 \x01(\tR\aorderId\x12\x16\n" +
 	"\x06status\x18\x02 \x01(\tR\x06status\x12\x1f\n" +
 	"\vtotal_price\x18\x03 \x01(\x03R\n" +
-	"totalPrice2Q\n" +
+	"totalPrice\"O\n" +
+	"\x12CreateOrderRequest\x12\x1d\n" +
+	"\n" +
+	"product_id\x18\x01 \x01(\tR\tproductId\x12\x1a\n" +
+	"\bquantity\x18\x02 \x01(\x05R\bquantity\"H\n" +
+	"\x13CreateOrderResponse\x12\x19\n" +
+	"\border_id\x18\x01 \x01(\tR\aorderId\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status2\x9d\x01\n" +
 	"\fOrderService\x12A\n" +
-	"\bGetOrder\x12\x19.order.v1.GetOrderRequest\x1a\x1a.order.v1.GetOrderResponseBGZEgithub.com/crisyantoparulian/grpc-order-service/gen/go/proto/order/v1b\x06proto3"
+	"\bGetOrder\x12\x19.order.v1.GetOrderRequest\x1a\x1a.order.v1.GetOrderResponse\x12J\n" +
+	"\vCreateOrder\x12\x1c.order.v1.CreateOrderRequest\x1a\x1d.order.v1.CreateOrderResponseBGZEgithub.com/crisyantoparulian/grpc-order-service/gen/go/proto/order/v1b\x06proto3"
 
 var (
 	file_proto_order_v1_order_proto_rawDescOnce sync.Once
@@ -152,16 +264,20 @@ func file_proto_order_v1_order_proto_rawDescGZIP() []byte {
 	return file_proto_order_v1_order_proto_rawDescData
 }
 
-var file_proto_order_v1_order_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_proto_order_v1_order_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_proto_order_v1_order_proto_goTypes = []any{
-	(*GetOrderRequest)(nil),  // 0: order.v1.GetOrderRequest
-	(*GetOrderResponse)(nil), // 1: order.v1.GetOrderResponse
+	(*GetOrderRequest)(nil),     // 0: order.v1.GetOrderRequest
+	(*GetOrderResponse)(nil),    // 1: order.v1.GetOrderResponse
+	(*CreateOrderRequest)(nil),  // 2: order.v1.CreateOrderRequest
+	(*CreateOrderResponse)(nil), // 3: order.v1.CreateOrderResponse
 }
 var file_proto_order_v1_order_proto_depIdxs = []int32{
 	0, // 0: order.v1.OrderService.GetOrder:input_type -> order.v1.GetOrderRequest
-	1, // 1: order.v1.OrderService.GetOrder:output_type -> order.v1.GetOrderResponse
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	2, // 1: order.v1.OrderService.CreateOrder:input_type -> order.v1.CreateOrderRequest
+	1, // 2: order.v1.OrderService.GetOrder:output_type -> order.v1.GetOrderResponse
+	3, // 3: order.v1.OrderService.CreateOrder:output_type -> order.v1.CreateOrderResponse
+	2, // [2:4] is the sub-list for method output_type
+	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -178,7 +294,7 @@ func file_proto_order_v1_order_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_order_v1_order_proto_rawDesc), len(file_proto_order_v1_order_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
