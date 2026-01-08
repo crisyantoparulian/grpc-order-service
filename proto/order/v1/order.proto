@@ -4,9 +4,20 @@ package order.v1;
 
 option go_package = "github.com/crisyantoparulian/grpc-order-service/gen/go/proto/order/v1";
 
+import "google/api/annotations.proto";
+
 service OrderService {
-  rpc GetOrder(GetOrderRequest) returns (GetOrderResponse);
-  rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse);
+  rpc GetOrder(GetOrderRequest) returns (GetOrderResponse) {
+    option (google.api.http) = {
+      get: "/v1/orders/{order_id}"
+    };
+  }
+  rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse) {
+    option (google.api.http) = {
+      post: "/v1/orders"
+      body: "*"
+    };
+  }
 }
 
 message GetOrderRequest {

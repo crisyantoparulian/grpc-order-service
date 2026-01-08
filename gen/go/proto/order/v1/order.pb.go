@@ -7,6 +7,7 @@
 package v1
 
 import (
+	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -233,7 +234,7 @@ var File_proto_order_v1_order_proto protoreflect.FileDescriptor
 
 const file_proto_order_v1_order_proto_rawDesc = "" +
 	"\n" +
-	"\x1aproto/order/v1/order.proto\x12\border.v1\",\n" +
+	"\x1aproto/order/v1/order.proto\x12\border.v1\x1a\x1cgoogle/api/annotations.proto\",\n" +
 	"\x0fGetOrderRequest\x12\x19\n" +
 	"\border_id\x18\x01 \x01(\tR\aorderId\"f\n" +
 	"\x10GetOrderResponse\x12\x19\n" +
@@ -247,10 +248,11 @@ const file_proto_order_v1_order_proto_rawDesc = "" +
 	"\bquantity\x18\x02 \x01(\x05R\bquantity\"H\n" +
 	"\x13CreateOrderResponse\x12\x19\n" +
 	"\border_id\x18\x01 \x01(\tR\aorderId\x12\x16\n" +
-	"\x06status\x18\x02 \x01(\tR\x06status2\x9d\x01\n" +
-	"\fOrderService\x12A\n" +
-	"\bGetOrder\x12\x19.order.v1.GetOrderRequest\x1a\x1a.order.v1.GetOrderResponse\x12J\n" +
-	"\vCreateOrder\x12\x1c.order.v1.CreateOrderRequest\x1a\x1d.order.v1.CreateOrderResponseBGZEgithub.com/crisyantoparulian/grpc-order-service/gen/go/proto/order/v1b\x06proto3"
+	"\x06status\x18\x02 \x01(\tR\x06status2\xd3\x01\n" +
+	"\fOrderService\x12`\n" +
+	"\bGetOrder\x12\x19.order.v1.GetOrderRequest\x1a\x1a.order.v1.GetOrderResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/orders/{order_id}\x12a\n" +
+	"\vCreateOrder\x12\x1c.order.v1.CreateOrderRequest\x1a\x1d.order.v1.CreateOrderResponse\"\x15\x82\xd3\xe4\x93\x02\x0f:\x01*\"\n" +
+	"/v1/ordersBGZEgithub.com/crisyantoparulian/grpc-order-service/gen/go/proto/order/v1b\x06proto3"
 
 var (
 	file_proto_order_v1_order_proto_rawDescOnce sync.Once
